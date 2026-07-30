@@ -5,7 +5,7 @@ reproducible analyses that connect biological questions with transparent data
 processing, statistical modelling and careful scientific interpretation.
 
 Based in Belgium and open to junior bioinformatics, computational biology and
-scientific data opportunities.
+scientific data opportunities, including remote and hybrid roles.
 
 ## Selected projects
 
