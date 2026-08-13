@@ -1,6 +1,6 @@
 # Hi, I'm David Verswijvel
 
-Biomedical scientist (MSc, KU Leuven) building **clinical data analytics** and **real-world evidence** pipelines. I care about reproducible workflows, honest interpretation of results (including null findings), and turning messy real-world data into decisions people can act on.
+Biomedical scientist (MSc, KU Leuven) building **clinical data analytics** and **real-world evidence** pipelines. I care about reproducible workflows, honest interpretation of results, and turning messy real-world data into decisions people can act on.
 
 Based in Ghent, Belgium — open to remote junior roles: Clinical Data Analyst, Real-World Evidence Analyst, Clinical Data Scientist, Health Data Analyst.
 
