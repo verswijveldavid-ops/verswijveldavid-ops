@@ -1,38 +1,40 @@
 # Hi, I'm David Verswijvel
 
-Biomedical scientist (MSc, KU Leuven) building end-to-end data pipelines for clinical trials, safety analysis, and biomedical research. I care about reproducible workflows, honest interpretation, and turning messy data into decisions people can act on.
+Biomedical scientist (MSc, KU Leuven) building **clinical data analytics** and **real-world evidence** pipelines. I care about reproducible workflows, honest interpretation of results (including null findings), and turning messy real-world data into decisions people can act on.
 
-Based in Ghent, Belgium — open to junior clinical data, bioinformatics, and biomedical data roles, including remote.
+Based in Ghent, Belgium — open to remote junior roles: Clinical Data Analyst, Real-World Evidence Analyst, Clinical Data Scientist, Health Data Analyst.
 
-## Clinical Data Analytics
+---
 
-End-to-end pipelines across both sides of the drug lifecycle — clinical trials (CDISC SDTM/ADaM, pre-market) and real-world evidence (OMOP CDM, post-market).
-
-| Project | What it demonstrates |
-|---|---|
-| [Clinical Data Pipeline (CDISC SDTM Pilot)](https://github.com/verswijveldavid-ops/clinical-data-pipeline) | Pre-market clinical trial pipeline on the Xanomeline vs placebo Alzheimer's trial: SQLite + Python data-quality engine (7,339 issues flagged across completeness / validity / consistency), R + `admiral` ADaM datasets (ADSL / ADAE / ADLB), safety analysis by treatment arm, ALT liver-enzyme shift tables, interactive Streamlit dashboard |
-| [RWE Pipeline on OMOP (Eunomia GiBleed)](https://github.com/verswijveldavid-ops/rwe-omop-pipeline) · [live dashboard ↗](https://rwe-omop-pipeline-b7bmnfx4uicppdwharuxfb.streamlit.app/) | Post-market real-world evidence pipeline on OMOP-standardized synthetic patient data: DuckDB + Python, NSAID new-user active-comparator design, GI-bleed safety signal analysis with confounder adjustment (crude RR 0.41 → adjusted ~1.0), interactive tabbed Streamlit dashboard with forest plot |
-
-## Bioinformatics
-
-Reproducible analyses of high-throughput biological data.
+## Projects on real patient data
 
 | Project | What it demonstrates |
 |---|---|
-| [Blood transcriptomics in Alzheimer's disease](https://github.com/verswijveldavid-ops/ad-blood-transcriptomics) | Reproducible RNA-seq analysis of 42 blood samples: metadata parsing, confounder-aware differential expression, PCA, candidate-gene review, Hallmark GSEA |
-| [Estrogen receptor ChIP-seq in MCF-7 cells](https://github.com/verswijveldavid-ops/eralpha-chipseq-mcf7) | FASTQ-to-peaks workflow design, peak annotation, motif analysis, nearest-gene assignment, functional enrichment, honest treatment of experimental limitations |
+| [🎗️ Breast Cancer Survival — TCGA-BRCA](https://github.com/verswijveldavid-ops/oncology-survival-pipeline) · [live dashboard ↗](https://oncology-survival-pipeline-husupmr7t8azdx3xjdbc9p.streamlit.app/) | End-to-end survival analysis on **1,076 real breast cancer patients** from the NCI Genomic Data Commons (TCGA-BRCA). Reconciled follow-up records across four sources (**found 48 patients marked "Alive" who had actually died**), mapped the raw data into **CDISC SDTM & ADaM** with `admiral`, ran Kaplan-Meier + Cox regression (Stage IV HR 6.70, Stage III 1.64, Age 1.23). Streamlit dashboard. |
+| [🍬 Diet & Chronic Disease — NHANES](https://github.com/verswijveldavid-ops/dietary-oncology) · [live dashboard ↗](https://dietary-oncology-ygadx9y5d79iuirkez2bom.streamlit.app/) | Survey-weighted logistic regression on **~4,700 real US adults** (CDC NHANES 2017–2018). Tested sugar intake against **13 chronic diseases**. Result: sugar is broadly null; smoking and obesity are the real drivers; the "sugar looks protective for diabetes" result is reverse causation (patients cut sugar *after* diagnosis). Streamlit dashboard. |
+
+## Standard training-data projects (CDISC & OMOP)
+
+Built on the industry-standard training datasets published by **CDISC** and **OHDSI** — the same datasets pharma teams and universities use to learn these workflows.
+
+| Project | What it demonstrates |
+|---|---|
+| [💊 Clinical Data Pipeline — CDISC SDTM Pilot](https://github.com/verswijveldavid-ops/clinical-data-pipeline) · [live dashboard ↗](https://clinical-data-pipeline-xqiebyvrkddveejacq6jjs.streamlit.app/) | Pre-market clinical-trial pipeline (Xanomeline vs placebo Alzheimer's trial): SQLite + Python data-quality engine (**7,645 issues flagged** across completeness / validity / consistency), R + `admiral` ADaM datasets (ADSL / ADAE / ADLB), safety analysis (TEAE rates 76.7% / 87.5% / 95.8% by arm — dose-dependent signal), ALT liver-enzyme shift table, Streamlit dashboard. |
+| [🌐 RWE Pipeline — OMOP Eunomia](https://github.com/verswijveldavid-ops/rwe-omop-pipeline) · [live dashboard ↗](https://rwe-omop-pipeline-b7bmnfx4uicppdwharuxfb.streamlit.app/) | Post-market real-world evidence pipeline on OMOP-standardised data: DuckDB + Python, NSAID new-user active-comparator design, GI-bleed safety signal. Headline: **crude RR 0.49 collapses to adjusted OR 0.98 after age/sex adjustment** — textbook confounding demonstration. Streamlit dashboard with forest plot. |
+
+---
 
 ## Technical focus
 
-- **Clinical data:** CDISC SDTM/ADaM, R + `admiral`, SQL, data-quality engines, safety analysis (TEAE, shift tables)
-- **Real-world evidence:** OMOP CDM, DuckDB, cohort building, new-user active-comparator design, confounder adjustment
-- **Transcriptomics:** RNA-seq, differential expression (PyDESeq2), pathway enrichment (GSEA)
-- **Regulatory genomics:** ChIP-seq, peak calling, motif analysis
-- **General:** Python, R, pandas, SQL (SQLite / DuckDB), Streamlit, Git/GitHub, reproducible workflows
+- **Clinical data:** CDISC SDTM/ADaM, R + `admiral` (pharmaverse), SQL, data-quality engines, safety analysis (TEAE, shift tables)
+- **Real-world evidence:** OMOP CDM, DuckDB, cohort building, new-user active-comparator design, confounder adjustment, causal inference
+- **Survival analysis:** Kaplan-Meier, Cox regression, time-to-event (`lifelines`, R `survival` + `survminer`)
+- **Statistical modelling:** logistic regression, survey-weighted analysis (NHANES sampling design), sensitivity analyses
+- **General:** Python (pandas, statsmodels), R, SQL (SQLite / DuckDB), Streamlit, Git/GitHub, reproducible workflows
 
-## Scientific approach
+## Approach
 
-My biomedical sciences background includes experimental study design, participant-facing research, EEG/EMG data collection, and laboratory quality control. I value reproducible workflows, clear limitations, and conclusions that remain faithful to the evidence — including when a well-designed analysis produces a negative result.
+My biomedical sciences background includes experimental study design, participant-facing research, EEG/EMG data collection, and laboratory quality control. I value reproducible workflows, clear limitations, and conclusions that stay faithful to the evidence — including when the evidence is a well-designed **null result**. Every project's `learning_log.md` shows the reasoning, mistakes, and fixes along the way.
 
 ## Connect
 
